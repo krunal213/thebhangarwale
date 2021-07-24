@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+        package="com.app.scrapapp">
+    <!--
+         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but you must specify either coarse or fine
+         location permissions for the 'MyLocation' functionality.
+    -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+            android:icon="@mipmap/ic_launcher_bhangarwale"
+            android:label="@string/app_name"
+            android:roundIcon="@mipmap/ic_launcher_bhangarwale"
+            android:screenOrientation="portrait"
+            android:supportsRtl="true"
+            android:theme="@style/AppTheme">
+        <activity android:name=".module_account.AccountActivity"></activity>
+        <activity android:name=".test.WebViewActivity"></activity>
+        <activity
+                android:name=".test.MainBhangarwaleActivity"
+                android:label="@string/title_activity_main_bhangarwale"
+                android:theme="@style/BhangarAppTheme" />
+        <activity android:name=".test.MainActivity8" />
+        <activity android:name=".test.MainActivity7" />
+        <activity android:name=".test.MainActivity6">
+
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            -->
+        </activity>
+        <activity
+                android:name=".test_new.MainActivity"
+                android:label="@string/title_activity_main_bhangarwale"
+                android:theme="@style/BhangarAppTheme"></activity>
+        <!--
+<activity
+                android:name=".test.FullscreenActivity"
+                android:configChanges="orientation|keyboardHidden|screenSize"
+                android:label="@string/title_activity_fullscreen"
+                android:theme="@style/FullscreenTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        -->
+        <activity
+                android:name=".module_address.view.activity.UpdateAddressActivity"
+                android:theme="@style/HomeTheme"
+                android:windowSoftInputMode="adjustResize|stateVisible" />
+        <activity
+                android:name=".module_address.view.activity.MyAddressActivity"
+                android:theme="@style/MyAddressTheme"></activity>
+        <activity
+                android:name=".module_address.view.activity.CreateCustomAddressActivity"
+                android:theme="@style/AppTheme.Address"
+                android:windowSoftInputMode="adjustNothing"></activity>
+        <activity
+                android:name=".module_profile.view.activity.ProfileActivity"
+                android:theme="@style/HomeTheme"
+                android:windowSoftInputMode="adjustResize|stateVisible">
+
+            <!--
+              <intent-filter>
+                  <action android:name="android.intent.action.MAIN" />
+
+                  <category android:name="android.intent.category.LAUNCHER" />
+              </intent-filter>
+            -->
+        </activity>
+        <!--
+        <activity android:name=".test.MainActivity3">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        -->
+        <activity
+                android:name=".test.ExplodeTransitionTestActvity"
+                android:theme="@style/SearchTheme" />
+        <activity android:name=".test.MainActivity2" />
+        <activity android:name=".test.MainActivity" />
+        <activity android:name=".test.MapActivity" />
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/.
+        -->
+        <meta-data
+                android:name="com.google.android.geo.API_KEY"
+                android:value="AIzaSyDXHLSlH9vdX-BSU0rU3g3eTyFFUBTi8-g" />
+        <meta-data
+                android:name="com.google.android.gms.version"
+                android:value="@integer/google_play_services_version" />
+        <!--
+<activity
+                android:name=".test.MarkerDemoActivity"
+                android:label="@string/title_activity_add_address"
+                android:theme="@style/MapTheme">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        -->
+        <activity
+                android:name=".module_address.view.activity.AddAddressActivity"
+                android:label="@string/title_activity_add_address"
+                android:theme="@style/MapTheme"></activity>
+        <activity
+                android:name=".module_login.OtpActivity"
+                android:theme="@style/AppThemeV3" />
+        <activity
+                android:name=".module_splash.SplashActivity"
+                android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!--
+<activity android:name=".module_login.PhoneNumberActivityV2"
+                android:theme="@style/AppThemeV2">
+
+
+        </activity>
+        -->
+        <activity
+                android:name=".module_login.PhoneNumberActivityV3"
+                android:theme="@style/AppThemeV4"
+                android:windowSoftInputMode="adjustNothing"></activity>
+        <activity
+                android:name=".module_login.PhoneNumberActivity"
+                android:windowSoftInputMode="adjustResize|stateVisible" />
+        <activity
+                android:name=".module_home.view.activity.MainActivity"
+                android:launchMode="singleTask"
+                android:theme="@style/HomeTheme"></activity>
+        <activity
+                android:name=".ImageDetailScreenActivity"
+                android:configChanges="orientation|keyboardHidden|screenSize"
+                android:theme="@style/FullscreenTheme" />
+        <activity
+                android:name=".module_order.AddItemActivity"
+                android:launchMode="singleTop"
+                android:theme="@style/AppThemeV2"
+                android:windowSoftInputMode="adjustNothing">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="image/*" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND_MULTIPLE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="image/*" />
+            </intent-filter>
+        </activity>
+        <activity
+                android:name=".module_order.AddItemActivityV2"
+                android:launchMode="singleTop"
+                android:theme="@style/AppTheme.AddItem"
+                android:windowSoftInputMode="adjustNothing"></activity>
+        <activity
+                android:name=".module_order.UpdateItemActivity"
+                android:theme="@style/AppTheme.AddItem"
+                android:windowSoftInputMode="adjustNothing"></activity>
+        <activity
+                android:name=".module_order.DeleteImagesActivity"
+                android:theme="@style/HomeTheme" />
+        <activity
+                android:name=".module_order.CreateOrderActivity"
+                android:theme="@style/HomeTheme"></activity>
+        <activity
+                android:name=".module_home.view.home.ItemDetailScreenActivity"
+                android:launchMode="singleTop"
+                android:theme="@style/HomeTheme"
+                android:windowSoftInputMode="adjustNothing" />
+    </application>
+
+</manifest>

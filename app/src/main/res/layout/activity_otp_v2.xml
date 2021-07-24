@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+    <TextView
+            android:id="@+id/label_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="56dp"
+            android:textAppearance="?attr/textAppearanceBody1"
+            android:text="Verification code"
+            android:textColor="#212121"
+            android:textSize="30sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    <!--android:fontFamily="@font/roboto_regular"-->
+
+
+    <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="12dp"
+            android:src="@drawable/ic_help"
+            app:layout_constraintLeft_toRightOf="@id/label_one"
+            app:layout_constraintTop_toTopOf="@id/label_one" />
+
+    <TextView
+            android:id="@+id/label_two"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginRight="40dp"
+            android:textAppearance="?attr/textAppearanceBody1"
+            android:gravity="center"
+            android:text="Please type in the verification code\nsent to +91 88066 16913"
+            android:textColor="#212121"
+            android:textSize="17sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/label_one" />
+
+
+    <!--android:fontFamily="@font/roboto_regular"-->
+
+    <com.mukesh.OtpView
+            android:id="@+id/otp_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="40dp"
+            android:inputType="number"
+            android:itemBackground="@android:color/white"
+            android:textColor="@color/colorAccent"
+            app:itemCount="6"
+            app:itemSpacing="16dp"
+            app:itemWidth="24dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/label_two"
+            app:lineColor="@color/colorAccent"
+            app:viewType="line"
+            android:textAppearance="?attr/textAppearanceBody1"/>
+
+
+    <!--android:fontFamily="@font/roboto_regular"-->
+
+
+
+    <TextView
+            android:id="@+id/label_three"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:textAppearance="?attr/textAppearanceBody1"
+            android:text="Didn't receive a code?\nPlease wait"
+            android:textColor="#212121"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:lineSpacingExtra="5dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/otp_view" />
+
+    <!--android:fontFamily="@font/roboto_regular"-->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+            android:id="@+id/action_delete"
+            android:icon="@drawable/ic_delete_v2"
+            android:iconTint="@color/colorAccent"
+            android:title=""
+            app:showAsAction="always" />
+
+    <item
+            android:id="@+id/action_mark_all"
+            android:title="Mark/Unmark All"
+            app:showAsAction="never"
+            />
+
+
+
+    <item
+            android:id="@+id/action_delete_all"
+            android:title="Delete All"
+            app:showAsAction="never"
+            />
+
+</menu>

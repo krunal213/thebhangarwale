@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/constraintLayoutHeader"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <include
+        android:id="@+id/content_app_bar"
+        layout="@layout/content_app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/item"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:transitionName="shared_element_container"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textViewItem"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@color/colorForHeaders"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dp"
+                android:text="Item"
+                android:textColor="@color/colorAccent"
+                android:textSize="18sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textViewItemName"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="15dp"
+                android:gravity="center_vertical"
+                android:text="Loha"
+                android:textColor="#212121"
+                android:textSize="16sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/textViewItemOriginalPrice"
+                app:layout_constraintTop_toBottomOf="@id/textViewItem" />
+
+
+            <TextView
+                android:id="@+id/textViewItemOriginalPrice"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginRight="15dp"
+                android:gravity="center_vertical|right"
+                android:text="30 kg"
+                android:textColor="@color/colorAccent"
+                app:layout_constraintBottom_toBottomOf="@id/textViewItemName"
+                app:layout_constraintLeft_toRightOf="@id/textViewItemName"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/textViewItemName" />
+
+
+            <TextView
+                android:id="@+id/textViewQuantity"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@color/colorForHeaders"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dp"
+                android:text="Quantity"
+                android:textColor="@color/colorAccent"
+                android:textSize="18sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewItemName" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/editTextQuantity"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:gravity="center_vertical"
+                android:inputType="number"
+                android:textSize="16sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewQuantity" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayoutHeaderForImage"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@color/colorForHeaders"
+                app:layout_constraintTop_toBottomOf="@id/editTextQuantity">
+
+                <TextView
+                    android:id="@+id/textViewTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="15dp"
+                    android:gravity="center_vertical"
+                    android:text="Images"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageViewCamera"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="15dp"
+                    android:src="@drawable/ic_take_photo_v2"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageViewGallery"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="15dp"
+                    android:src="@drawable/ic_gallery_v2"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/imageViewCamera"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageViewDelete"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="15dp"
+                    android:src="@drawable/ic_delete_v2"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/imageViewGallery"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerviewImages"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/constraintLayoutHeaderForImage" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_gravity="bottom"
+        android:layout_margin="16dp"
+        android:background="@drawable/drawable_oval_shape"
+        android:text="Submit"
+        android:textColor="@color/colorPrimaryHome"
+        android:textStyle="bold" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+

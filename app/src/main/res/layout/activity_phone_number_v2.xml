@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_width="match_parent"
+                app:titleTextAppearance="@style/Toolbar.TitleText"
+                app:contentInsetStartWithNavigation="0dp"
+                android:contentInsetLeft="0dp"
+                android:contentInsetStart="0dp"
+                app:contentInsetLeft="0dp"
+                app:contentInsetStart="0dp"
+                android:contentInsetRight="0dp"
+                android:contentInsetEnd="0dp"
+                app:contentInsetRight="0dp"
+                app:contentInsetEnd="0dp"
+                android:background="@android:color/white">
+
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Bhangarwale"
+                    android:gravity = "center"
+                    android:id="@+id/toolbar_title"
+                    android:textColor="@color/colorBlue"
+                    android:textSize="24sp"/>
+
+
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewBhangarWaleBackground"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            app:layout_constraintTop_toBottomOf="@id/app_bar"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+
+
+    <TextView
+            android:id="@+id/textViewLabelOne"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Sell yourscrap online"
+            android:textColor="@color/colorGray900"
+            app:layout_constraintTop_toBottomOf="@id/imageViewBhangarWaleBackground"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:textSize="24sp"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/eight_dp"/>
+
+
+
+    <TextView
+            android:id="@+id/textViewLabelTwo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Through mobile app"
+            android:textColor="@color/colorGray900"
+            app:layout_constraintTop_toBottomOf="@id/textViewLabelOne"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:textSize="12sp"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/eight_dp"/>
+
+
+
+    <TextView
+            android:id="@+id/textViewLabelThree"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="LOGIN"
+            android:textColor="@color/colorBlue"
+            app:layout_constraintTop_toBottomOf="@id/textViewLabelTwo"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/thirty_six_dp"/>
+
+
+
+    <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutPhoneNumber"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textViewLabelThree"
+            android:layout_marginTop="@dimen/thirty_six_dp"
+            android:layout_marginRight="@dimen/sixteen_dp"
+            android:layout_marginLeft="@dimen/sixteen_dp"
+            >
+
+        <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextPhoneNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:hint="@string/title_enter_phone_number"
+                android:ems="10"
+                android:maxLength="10"
+                android:maxLines="1"
+                android:singleLine="true"
+                >
+
+
+        </com.google.android.material.textfield.TextInputEditText>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+    <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonGetOtp"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/thirty_six_dp"
+            android:background="@drawable/drawable_oval_shape_v2"
+            android:text="Get Otp"
+            android:textColor="@color/colorPrimaryHome"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textInputLayoutPhoneNumber"/>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

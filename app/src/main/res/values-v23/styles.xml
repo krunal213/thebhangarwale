@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!--<style name="HomeTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        &lt;!&ndash;<item name="android:windowLightStatusBar">true</item>
+        &ndash;&gt;<item name="colorPrimary">@color/colorPrimaryHome</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkHome</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="fontFamily">@font/google_sans_medium</item>
+        <item name="android:windowBackground">@android:color/white</item>
+        <item name="android:colorBackground">@android:color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>-->
+    <style name="MapTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowActionModeOverlay">true</item>
+
+
+
+        <!--<item name="android:windowActionBarOverlay">true</item>-->
+    </style>
+
+    <style name="SearchTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!--<item name="android:windowLightStatusBar">true</item>
+        --><item name="colorPrimary">@color/colorPrimaryDarkHome</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkHome</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <!--<item name="fontFamily">@font/google_sans_medium</item>-->
+        <item name="android:windowBackground">@android:color/white</item>
+        <item name="android:colorBackground">@android:color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="colorControlNormal">@color/colorPrimaryDark</item>
+    </style>
+
+    <style name="MyAddressTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimaryHome</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkHome</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <!--<item name="fontFamily">@font/google_sans_medium</item>-->
+        <item name="windowActionModeOverlay">true</item>
+        <item name="actionModeStyle">@style/MyAddressActionMode</item>
+        <item name="actionModeCloseButtonStyle">@style/MyAddressActionButtonCloseMode</item>
+        <item name="actionOverflowButtonStyle">@style/MyAddressActionOverflowButtonStyle</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+    <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:windowBackground">@android:color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+    <style name="AppThemeV2" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@android:color/white</item>
+        <item name="colorPrimaryDark">@android:color/white</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <!--<item name="fontFamily">@font/google_sans_medium</item>-->
+        <item name="android:windowBackground">@android:color/white</item>
+        <item name="android:colorBackground">@android:color/white</item>
+        <item name="otpViewStyle">@style/OtpWidget.OtpView</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+    <style name="SplashThemeV2" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@android:color/white</item>
+        <item name="colorPrimaryDark">@android:color/white</item>
+        <item name="colorAccent">@android:color/white</item>
+       <!-- <item name="android:windowBackground">@drawable/ic_bhangarwale_splash</item>
+       --> <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+    <style name="BhangarAppTheme.BottomNavigationView">
+        <item name="colorAccent">@android:color/black</item>
+    </style>
+
+    <style name="BhangarAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorAccent</item>
+        <item name="colorPrimaryDark">@android:color/white</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <!--<item name="fontFamily">@font/google_sans_medium</item>-->
+        <item name="android:windowBackground">@android:color/white</item>
+        <item name="android:colorBackground">@android:color/white</item>
+        <item name="otpViewStyle">@style/OtpWidget.OtpView</item>
+        <item name="android:windowLightStatusBar">true</item>
+
+    </style>
+
+    <style name="HomeTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkHome</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <!-- Colors -->
+        <item name="colorPrimary">#01875F</item>
+        <!-- <item name="colorControlNormal">#616161</item>
+        -->
+        <item name="colorControlNormal">#01875F</item>
+        <item name="colorOnSurface">#000000</item>
+        <item name="android:windowLightStatusBar" tools:ignore="NewApi">true</item>
+        <item name="android:statusBarColor">@color/color_status_bar</item>
+        <item name="android:colorBackground">@color/color_status_bar</item>
+        <item name="colorSecondary">#F8B624</item>
+    </style>
+
+</resources>

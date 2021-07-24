@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        tools:context=".module_address.view.activity.CreateCustomAddressActivity">
+
+    <!--<include
+            android:id="@+id/content_app_bar"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            layout="@layout/content_app_bar"/>-->
+
+
+    <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@drawable/elevation"
+            app:layout_constraintTop_toTopOf="parent"
+            app:titleTextAppearance="@style/Toolbar.TitleTextV3"
+            app:contentInsetStartWithNavigation="0dp"
+            android:contentInsetLeft="0dp"
+            android:contentInsetStart="0dp"
+            app:contentInsetLeft="0dp"
+            app:contentInsetStart="0dp"
+            android:contentInsetRight="0dp"
+            android:contentInsetEnd="0dp"
+            app:contentInsetRight="0dp"
+            app:contentInsetEnd="0dp"/>
+
+    <androidx.core.widget.NestedScrollView
+            android:id="@+id/nv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            app:layout_constraintBottom_toTopOf="@id/buttonSaveAddress">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingTop="24dp">
+
+            <TextView
+                    android:id="@+id/textViewAlert"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:textColor="#ff00"
+                    android:layout_marginLeft="2dp"
+                    android:text="Our services available for Nagpur only"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutMyLocation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/textViewAlert"
+                    android:layout_marginTop="24dp">
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="My Location"
+                        android:textSize="16sp"
+                        android:maxLines="3"
+                        android:minLines="1"/>
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutCompleteAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/textInputLayoutMyLocation"
+                    android:layout_marginTop="28dp">
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="LandMark"
+                        android:textSize="16sp"
+                        android:maxLines="1"
+                        android:minLines="1"
+                        android:gravity="top" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutPincode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/textInputLayoutCompleteAddress"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:layout_marginTop="28dp"
+
+                    app:counterEnabled="true"
+                    app:counterMaxLength="6"
+
+
+                    >
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Pincode"
+                        android:textSize="16sp"
+                        android:maxLines="1"
+                        android:maxLength="6"
+                        android:inputType="number"
+                        android:digits="01234567890"/>
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonSaveAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/drawable_oval_shape"
+            android:text="Save Address"
+            android:textColor="@color/colorPrimaryHome"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/nv"
+            android:layout_margin="16dp"
+
+            />
+
+    <!--<include layout="@layout/content_create_custom_address" />-->
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

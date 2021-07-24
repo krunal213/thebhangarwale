@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        android:background="@android:color/white">
+
+    <!--android:background="#F5F5F6"-->
+
+    <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@drawable/elevation"
+            app:contentInsetStartWithNavigation="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navigationIcon="@drawable/ic_info"
+            app:title="The Bhangarwale"
+            app:titleTextAppearance="@style/Toolbar.TitleTextV2" />
+
+
+    <!-- <com.facebook.shimmer.ShimmerFrameLayout
+         android:id="@+id/container_Shimmer"
+         android:layout_width="match_parent"
+         android:layout_height="0dp"
+         app:layout_constraintBottom_toBottomOf="parent"
+         app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:orientation="vertical">
+
+             <include layout="@layout/shimmer_adapter_dashboard" />
+
+             <include layout="@layout/shimmer_adapter_dashboard" />
+
+         </LinearLayout>
+
+     </com.facebook.shimmer.ShimmerFrameLayout>-->
+
+
+
+    <com.app.scrapapp.module_home.view.BhangarwaleSmoothRefreshLayout
+            android:id="@+id/mRefreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            app:sr_content="@+id/recyclerView">
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:overScrollMode="never"
+                android:visibility="gone" />
+
+
+    </com.app.scrapapp.module_home.view.BhangarwaleSmoothRefreshLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

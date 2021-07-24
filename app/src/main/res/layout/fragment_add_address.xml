@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:elevation="@dimen/sixteen_dp"
+        android:animateLayoutChanges="true">
+
+
+    <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="#EAEAEC"/>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp">
+
+
+
+
+        <TextView
+                android:id="@+id/textViewAlert"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:textColor="#ff00"
+                android:layout_marginLeft="2dp"
+                android:text="Our services available for Nagpur only"/>
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayoutLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewAlert"
+                android:layout_marginTop="20dp"
+                android:theme="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+
+                >
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textInputEditTextLocation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:hint="My Location"
+                    android:textSize="16sp"
+                    android:autofillHints="@null"
+                    android:importantForAutofill="no"
+                    android:maxLines="3"/>
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewEdit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/sixteen_dp"
+                android:layout_marginBottom="16dp"
+                android:text="Edit"
+                android:textColor="#ff0000"
+                android:textSize="16sp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/textInputLayoutLocation"
+                app:layout_constraintLeft_toRightOf="@id/textInputLayoutLocation"
+                app:layout_constraintRight_toRightOf="parent" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayoutCompleteAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textInputLayoutLocation"
+                android:theme="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                >
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Complete Address"
+                    android:textSize="16sp"
+                    android:maxLines="3"/>
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonSaveAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/drawable_oval_shape"
+                android:text="Save Address"
+                android:textColor="@color/colorPrimaryHome"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textInputLayoutCompleteAddress" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

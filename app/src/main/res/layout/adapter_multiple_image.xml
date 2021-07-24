@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="12dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageProfile"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_bhangarwale_facebook"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+                android:id="@+id/textViewPageName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="The Bhangarwale"
+                android:textColor="#212121"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@id/textViewCreatedTime"
+                app:layout_constraintLeft_toRightOf="@id/imageProfile"
+                app:layout_constraintRight_toLeftOf="@id/imageViewMenu"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+                android:id="@+id/textViewCreatedTime"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="1 Jan 2021  1:10 PM"
+                android:textSize="10sp"
+                app:layout_constraintBottom_toBottomOf="@id/imageProfile"
+                app:layout_constraintLeft_toLeftOf="@id/textViewPageName"
+                app:layout_constraintRight_toRightOf="@id/textViewPageName"
+                app:layout_constraintTop_toBottomOf="@id/textViewPageName" />
+
+
+        <ImageView
+                android:id="@+id/imageViewMenu"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:src="@drawable/ic_more"
+                android:padding="8dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerviewImages"
+            android:layout_width="match_parent"
+            android:layout_height="390dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layoutHeader" />
+
+    <com.hrskrs.instadotlib.InstaDotView
+            android:id="@+id/indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:dot_activeColor="@color/colorAccent"
+            app:dot_activeSize="6dp"
+            app:dot_inactiveColor="#9E9E9E"
+            app:dot_inactiveSize="5dp"
+            app:dot_margin="5dp"
+            app:dot_mediumSize="4dp"
+            app:dot_smallSize="3dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/recyclerviewImages"
+            android:layout_margin="8dp"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="12dp"
+            android:paddingTop="12dp"
+            android:paddingRight="12dp"
+            android:paddingBottom="16dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/recyclerviewImages">
+
+        <TextView
+                android:id="@+id/textViewHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="Happy Diwali"
+                android:textColor="#212121"
+                android:textSize="16sp"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="Let's Not Forget Our Nature This Diwali,Celebrate An Eco-Friendly Diwali."
+                android:textSize="12sp"
+                app:layout_constraintTop_toBottomOf="@id/textViewHeader" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
