@@ -27,9 +27,10 @@
 
     <dimen name="design_bottom_navigation_elevation" tools:override="true">2dp</dimen>
     <dimen name="design_bottom_navigation_icon_size"  tools:override="true">26dp</dimen>
-   <!-- <dimen name="design_bottom_navigation_icon_size" tools:override="true">26dp</dimen>
-    <dimen name="design_bottom_navigation_margin" tools:override="true">6dp</dimen>
--->
+    <dimen name="recyclerview_edges">8dp</dimen>
+    <!-- <dimen name="design_bottom_navigation_icon_size" tools:override="true">26dp</dimen>
+     <dimen name="design_bottom_navigation_margin" tools:override="true">6dp</dimen>
+ -->
 
 
     <!-- <dimen name="design_bottom_navigation_text_size" tools:override="true">15sp</dimen>

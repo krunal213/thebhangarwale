@@ -13,6 +13,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.app.myapplication.ui.notifications.NotificationsViewModel
 import com.app.scrapapp.R
+import com.app.scrapapp.module_account.AccountActivity
+import com.app.scrapapp.module_help.HelpActivity
+import com.app.scrapapp.module_settings.SettingsActivity
 import com.bumptech.glide.Glide
 
 class ProfileFragment : Fragment(), View.OnClickListener {
@@ -56,9 +59,15 @@ class ProfileFragment : Fragment(), View.OnClickListener {
                 if (position != null) {
                     var menu : Menu? = profileAdapter?.menus?.get(position)
                     when(menu?.id){
-                        /*R.id.settings->{
-                            startActivity(Intent(requireActivity(),SettingsActivity2::class.java))
-                        }*/
+                        R.id.account->{
+                            startActivity(Intent(requireActivity(),AccountActivity::class.java))
+                        }
+                        R.id.settings->{
+                            startActivity(Intent(requireActivity(), SettingsActivity::class.java))
+                        }
+                        R.id.help->{
+                            startActivity(Intent(requireActivity(), HelpActivity::class.java))
+                        }
                     }
 
                 }

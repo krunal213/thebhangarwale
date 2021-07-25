@@ -5,16 +5,14 @@ import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.app.ActivityCompat
-import androidx.fragment.app.Fragment
 import com.app.scrapapp.R
-import com.app.scrapapp.module_address.view.fragment.AddAddressFragment
+import com.app.scrapapp.module_address.view.fragment.UpdateAddressFragment
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.CameraPosition
 import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.model.MarkerOptions
 import kotlinx.android.synthetic.main.activity_main4.*
 
 class MainActivity4 : AppCompatActivity(), OnMapReadyCallback {
@@ -25,7 +23,7 @@ class MainActivity4 : AppCompatActivity(), OnMapReadyCallback {
 
         supportFragmentManager
             .beginTransaction()
-            .replace(R.id.fragment2,AddAddressFragment())
+            .replace(R.id.fragment2,UpdateAddressFragment())
             .commit()
 
 

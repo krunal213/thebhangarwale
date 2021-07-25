@@ -18,4 +18,8 @@
     <item name="account" type="id"/>
     <item name="settings" type="id"/>
     <item name="help" type="id"/>
+    <item name="address" type="id"/>
+    <item name="requests" type="id"/>
+    <item name="contact_us" type="id"/>
+    <item name="email_us" type="id"/>
 </resources>

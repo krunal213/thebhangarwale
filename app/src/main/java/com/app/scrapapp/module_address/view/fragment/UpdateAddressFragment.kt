@@ -20,9 +20,9 @@ import com.app.scrapapp.custom.listeners.IFragmentListener
 import com.app.scrapapp.module_address.view.activity.AddAddressActivity
 import com.app.scrapapp.module_address.view.activity.CreateCustomAddressActivity
 import com.app.scrapapp.test.ExplodeTransitionTestActvity
-import kotlinx.android.synthetic.main.fragment_add_address.*
+import kotlinx.android.synthetic.main.fragment_update_address.*
 
-class AddAddressFragment : Fragment(), IActivityListener, Toolbar.OnMenuItemClickListener {
+class UpdateAddressFragment : Fragment(), IActivityListener, Toolbar.OnMenuItemClickListener {
 
     private var iFragmentListener : IFragmentListener? = null
 
@@ -31,13 +31,13 @@ class AddAddressFragment : Fragment(), IActivityListener, Toolbar.OnMenuItemClic
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_add_address, container, false)
+        return inflater.inflate(R.layout.fragment_update_address, container, false)
     }
 
     companion object {
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            AddAddressFragment().apply {}
+            UpdateAddressFragment().apply {}
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -46,13 +46,13 @@ class AddAddressFragment : Fragment(), IActivityListener, Toolbar.OnMenuItemClic
         iFragmentListener = this.activity as AddAddressActivity
 
         toolbar.inflateMenu(R.menu.menu_create_address)
-        toolbar.title = "Save Address"
+        toolbar.title = "Update Address"
         toolbar.setOnMenuItemClickListener(this)
 
         textInputEditTextLocation.setOnClickListener {
             val options =
                 ActivityOptionsCompat.makeSceneTransitionAnimation(this.activity as AppCompatActivity)
-            (this@AddAddressFragment.activity as AddAddressActivity).startActivityFromFragment(
+            (this@UpdateAddressFragment.activity as AddAddressActivity).startActivityFromFragment(
                 this,
                 Intent(this.activity, ExplodeTransitionTestActvity::class.java),
                 REQUEST_MY_LOCATION,

@@ -187,6 +187,31 @@
     <string name="title_gallery">Gallery</string>
     <string name="title_camera">Camera</string>
     <string name="title_update_item">Update Item</string>
+    <string name="title_address">Address</string>
+    <string name="title_requests">Requests</string>
+    <string name="sub_title_address">Save and update your address</string>
+    <string name="sub_title_requests">Check your request status</string>
+    <string name="tag_id">tag_id</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="title_contact_us">Contact us</string>
+    <string name="sub_title_contact_us">Tap will redirected to dial pad</string>
+    <string name="title_email_us">Email us</string>
+    <string name="sub_title_email_us">Tap will redirected to mail</string>
 
 
 </resources>

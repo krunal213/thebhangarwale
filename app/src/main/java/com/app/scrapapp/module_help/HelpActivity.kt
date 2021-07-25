@@ -1,19 +1,18 @@
-package com.app.scrapapp.module_account
+package com.app.scrapapp.module_help
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.net.Uri
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.app.scrapapp.R
-import com.app.scrapapp.module_address.view.activity.MyAddressActivity
-import com.app.scrapapp.module_home.view.notifications.ProfileAdapter
-import com.app.scrapapp.module_home.view.notifications.ProfileItemDecoration
-import com.app.scrapapp.module_profile.view.itemdecoration.AccountItemDecoration
 import kotlinx.android.synthetic.main.activity_add_item_v2.*
 
-class AccountActivity : AppCompatActivity(), View.OnClickListener {
+
+class HelpActivity : AppCompatActivity(), View.OnClickListener {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_account)
@@ -26,8 +25,8 @@ class AccountActivity : AppCompatActivity(), View.OnClickListener {
         val rv : RecyclerView = findViewById<RecyclerView>(R.id.recyclerviewItems)
         rv?.layoutManager = LinearLayoutManager(this,
             LinearLayoutManager.VERTICAL,false)
-        rv?.adapter = AccountAdapter(this,this)
-        rv?.addItemDecoration(AccountItemDecoration(this))
+        rv?.adapter = HelpAdapter(this,this)
+        rv?.addItemDecoration(HelpItemDecoration(this))
 
     }
 
@@ -36,11 +35,15 @@ class AccountActivity : AppCompatActivity(), View.OnClickListener {
             R.id.layoutMain->{
                 val id = view.getTag(R.string.tag_id)
                 when(id){
-                    R.id.address->{
-                        startActivity(Intent(this,MyAddressActivity::class.java))
+                    R.id.contact_us->{
+                        val intent = Intent(Intent.ACTION_DIAL)
+                        intent.data = Uri.parse("tel:0123456789")
+                        startActivity(intent)
                     }
-                    R.id.requests->{
-
+                    R.id.email_us->{
+                        val intent = Intent(Intent.ACTION_SENDTO)
+                        intent.data = Uri.parse("mailto:help@bhangarwale.com")
+                        startActivity(intent)
                     }
                 }
             }

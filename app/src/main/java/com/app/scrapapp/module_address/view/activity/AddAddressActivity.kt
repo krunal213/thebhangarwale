@@ -15,7 +15,7 @@ import com.app.scrapapp.R
 import com.app.scrapapp.custom.constants.EDIT_AVAILABLE_ADDRESS
 import com.app.scrapapp.custom.listeners.IActivityListener
 import com.app.scrapapp.custom.listeners.IFragmentListener
-import com.app.scrapapp.module_address.view.fragment.AddAddressFragment
+import com.app.scrapapp.module_address.view.fragment.UpdateAddressFragment
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -42,7 +42,7 @@ class AddAddressActivity : AppCompatActivity(),
 
     private lateinit var mMap: GoogleMap
     private lateinit var geocoder: Geocoder
-    private val iActivityListener: IActivityListener = AddAddressFragment()
+    private val iActivityListener: IActivityListener = UpdateAddressFragment()
     private var editAvailableAddress : Address? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
