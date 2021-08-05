@@ -42,7 +42,7 @@
                 android:src="@drawable/sankrant"
                 android:scaleType="centerCrop"/>
 
-        <androidx.appcompat.widget.AppCompatTextView
+        <com.codesgood.views.JustifiedTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toBottomOf="@id/imageview"
@@ -55,13 +55,13 @@
                 android:maxLines="3"
                 android:textSize="14sp"
                 android:textColor="#212121"
-                android:fontFamily="@font/roboto_regular"
+                android:fontFamily="@font/jet_brains_mono_regular"
                 android:lineHeight="20dp"
-                android:text="Did you know ?\n#PetBottles,#saveworld,#recycledmaterials,#recycling, #nagpur,#maharashtra,#plastic,#saveplanet,#saveearth,#RecycleWaste"/>
+                android:text="Did you know ?\n #PetBottles,#saveworld,#recycledmaterials,#recycling, #nagpur,#maharashtra,#plastic,#saveplanet,#saveearth,#RecycleWaste"/>
 
 
 
-        <!--android:fontFamily="@font/roboto_regular"-->
+        <!--android:fontFamily="@font/jet_brains_mono_regular"-->
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

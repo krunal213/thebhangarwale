@@ -10,20 +10,18 @@ import com.app.scrapapp.module_profile.view.viewholder.ProfileTypeOneViewHolder
 import com.app.scrapapp.module_profile.view.viewholder.ProfileTypeTwoViewHolder
 import kotlinx.android.synthetic.main.adapter_profile_type_one.view.*
 
-const val TYPE_TWO = 2
-const val TYPE_ONE = 1
-
 class ProfileAdapter(var personProfileDetails: ArrayList<ProfileDetails>, var onClickListener: View.OnClickListener?) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        when(viewType){
-            TYPE_TWO->{
-                val view = LayoutInflater.from(parent.context).inflate(R.layout.adapter_profile_type_two,parent,false)
-                return ProfileTypeTwoViewHolder(view)
-            }
-            else->{
+    override fun onCreateViewHolder(parent: ViewGroup, position : Int): RecyclerView.ViewHolder {
+        val isEditable : Boolean = personProfileDetails.get(position).isEditable
+        when(isEditable){
+            true->{
                 val view = LayoutInflater.from(parent.context).inflate(R.layout.adapter_profile_type_one,parent,false)
                 return ProfileTypeOneViewHolder(view)
+            }
+            false->{
+                val view = LayoutInflater.from(parent.context).inflate(R.layout.adapter_profile_type_two,parent,false)
+                return ProfileTypeTwoViewHolder(view)
             }
         }
 
@@ -35,14 +33,7 @@ class ProfileAdapter(var personProfileDetails: ArrayList<ProfileDetails>, var on
 
 
     override fun getItemViewType(position: Int): Int {
-        when(position){
-            2->{
-                return TYPE_TWO
-            }
-            else->{
-                return TYPE_ONE
-            }
-        }
+        return position;
     }
 
 

@@ -17,12 +17,12 @@
             app:layout_constraintTop_toTopOf="parent"
             android:textColor="#212121"
             android:textSize="16sp"
-            android:fontFamily="@font/roboto_regular"
+            android:fontFamily="@font/jet_brains_mono_regular"
             android:textAppearance="?attr/textAppearanceBody1"
             />
 
 
-    <!--android:fontFamily="@font/roboto_regular"-->
+    <!--android:fontFamily="@font/jet_brains_mono_regular"-->
 
 
 
@@ -35,8 +35,8 @@
             app:layout_constraintTop_toBottomOf="@id/textViewTitle"
             android:textSize="14sp"
             android:textAppearance="?attr/textAppearanceBody2"
-            android:fontFamily="@font/roboto_regular"
+            android:fontFamily="@font/jet_brains_mono_regular"
             android:textColor="#757575"/>
 
-    <!--android:fontFamily="@font/roboto_regular"-->
+    <!--android:fontFamily="@font/jet_brains_mono_regular"-->
 </androidx.constraintlayout.widget.ConstraintLayout>

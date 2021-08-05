@@ -3,12 +3,13 @@ package com.app.scrapapp.entity
 import android.os.Parcel
 import android.os.Parcelable
 
+data class ProfileDetails(val title : String?,val text : String?, var image : Int?,val isEditable : Boolean) : Parcelable {
 
-data class ProfileDetails(val title : String?,val text : String?, var image : Int?) : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readString(),
         parcel.readString(),
-        parcel.readValue(Int::class.java.classLoader) as? Int
+        parcel.readValue(Int::class.java.classLoader) as? Int,
+        parcel.readValue(Boolean::class.java.classLoader) as Boolean
     ) {
     }
 
@@ -16,6 +17,7 @@ data class ProfileDetails(val title : String?,val text : String?, var image : In
         parcel.writeString(title)
         parcel.writeString(text)
         parcel.writeValue(image)
+        parcel.writeValue(isEditable)
     }
 
     override fun describeContents(): Int {

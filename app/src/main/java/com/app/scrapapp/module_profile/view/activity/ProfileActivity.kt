@@ -12,6 +12,8 @@ import com.app.scrapapp.R
 import com.app.scrapapp.entity.ProfileDetails
 import com.app.scrapapp.module_address.view.activity.AddAddressActivity
 import com.app.scrapapp.module_address.view.activity.MyAddressActivity
+import com.app.scrapapp.module_login.PhoneNumberActivityV2
+import com.app.scrapapp.module_login.PhoneNumberActivityV3
 import com.app.scrapapp.module_profile.view.adapters.ProfileAdapter
 import com.app.scrapapp.module_profile.view.bottomsheetdialogfragment.ProfileNameEditBottomDialogFragment
 import com.app.scrapapp.module_profile.view.bottomsheetdialogfragment.ProfilePhoneNumberEditBottomDialogFragment
@@ -37,22 +39,16 @@ class ProfileActivity : AppCompatActivity(), View.OnClickListener {
             ProfileDetails(
                 resources.getString(R.string.title_name),
                 "Krunal Kathikar",
-                R.drawable.ic_profile_name
+                R.drawable.ic_account,
+                true
             )
         )
         personProfileDetails.add(
             ProfileDetails(
                 resources.getString(R.string.title_phone),
                 "+91 8806616913",
-                R.drawable.ic_profile_phone_number
-            )
-        )
-
-        personProfileDetails.add(
-            ProfileDetails(
-                null,
-                resources.getString(R.string.title_my_address),
-                R.drawable.ic_address
+                R.drawable.ic_phone_v2,
+                false
             )
         )
 
@@ -80,7 +76,7 @@ class ProfileActivity : AppCompatActivity(), View.OnClickListener {
             }
 
             R.id.constraintLayoutProfileTypeTwo->{
-                val intentAddAddress = Intent(this,MyAddressActivity::class.java)
+                val intentAddAddress = Intent(this, PhoneNumberActivityV3::class.java)
                 startActivity(intentAddAddress)
             }
         }

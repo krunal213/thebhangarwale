@@ -11,6 +11,7 @@ import com.app.scrapapp.module_address.view.activity.MyAddressActivity
 import com.app.scrapapp.module_home.view.notifications.ProfileAdapter
 import com.app.scrapapp.module_home.view.notifications.ProfileItemDecoration
 import com.app.scrapapp.module_profile.view.itemdecoration.AccountItemDecoration
+import com.app.scrapapp.module_request.RequestActivity
 import kotlinx.android.synthetic.main.activity_add_item_v2.*
 
 class AccountActivity : AppCompatActivity(), View.OnClickListener {
@@ -40,7 +41,7 @@ class AccountActivity : AppCompatActivity(), View.OnClickListener {
                         startActivity(Intent(this,MyAddressActivity::class.java))
                     }
                     R.id.requests->{
-
+                        startActivity(Intent(this,RequestActivity::class.java))
                     }
                 }
             }

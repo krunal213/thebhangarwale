@@ -4,9 +4,8 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".module_address.view.activity.MyAddressActivity"
-        android:orientation="vertical">
-
+        android:orientation="vertical"
+        tools:context=".module_address.view.activity.MyAddressActivity">
 
 
     <com.google.android.material.appbar.MaterialToolbar
@@ -14,29 +13,40 @@
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:background="@drawable/elevation"
-            app:layout_constraintTop_toTopOf="parent"
-            app:titleTextAppearance="@style/Toolbar.TitleTextV3"
-            app:contentInsetStartWithNavigation="0dp"
-            android:contentInsetLeft="0dp"
             android:contentInsetStart="0dp"
-            app:contentInsetLeft="0dp"
-            app:contentInsetStart="0dp"
-            android:contentInsetRight="0dp"
+            android:contentInsetLeft="0dp"
             android:contentInsetEnd="0dp"
+            android:contentInsetRight="0dp"
+            app:contentInsetEnd="0dp"
+            app:contentInsetLeft="0dp"
             app:contentInsetRight="0dp"
-            app:contentInsetEnd="0dp"/>
+            app:contentInsetStart="0dp"
+            app:contentInsetStartWithNavigation="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:titleTextAppearance="@style/Toolbar.TitleTextV3" />
 
-   <!-- <include
+    <!-- <include
 
-            layout="@layout/content_headers_address"/>
+             layout="@layout/content_headers_address"/>
+ -->
 
--->
-    <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerviewAddress"
+
+    <com.app.scrapapp.module_home.view.BhangarwaleSmoothRefreshLayout
+            android:id="@+id/mRefreshLayout"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            app:sr_content="@+id/recyclerviewAddress">
 
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerviewAddress"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:overScrollMode="never"/>
+
+
+    </com.app.scrapapp.module_home.view.BhangarwaleSmoothRefreshLayout>
 
 
 </LinearLayout>

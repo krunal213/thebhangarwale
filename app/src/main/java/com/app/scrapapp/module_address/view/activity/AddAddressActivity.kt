@@ -1,6 +1,9 @@
 package com.app.scrapapp.module_address.view.activity
 
+import android.Manifest
 import android.annotation.SuppressLint
+import android.content.IntentSender
+import android.content.pm.PackageManager
 import android.content.res.Resources
 import android.location.Address
 import android.location.Geocoder
@@ -10,13 +13,15 @@ import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
 import com.app.scrapapp.R
 import com.app.scrapapp.custom.constants.EDIT_AVAILABLE_ADDRESS
 import com.app.scrapapp.custom.listeners.IActivityListener
 import com.app.scrapapp.custom.listeners.IFragmentListener
 import com.app.scrapapp.module_address.view.fragment.UpdateAddressFragment
-import com.google.android.gms.location.LocationServices
+import com.google.android.gms.common.api.ResolvableApiException
+import com.google.android.gms.location.*
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -24,8 +29,10 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.CameraPosition
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MapStyleOptions
+import com.google.android.gms.tasks.Task
 import com.rodolfonavalon.shaperipplelibrary.model.Circle
 import kotlinx.android.synthetic.main.activity_add_address.*
+import permissions.dispatcher.*
 import java.util.*
 
 /**this screem helps to find address
@@ -33,6 +40,7 @@ import java.util.*
  * with create address button
  * and save address
  ***/
+@RuntimePermissions
 class AddAddressActivity : AppCompatActivity(),
     OnMapReadyCallback,
     GoogleMap.OnCameraIdleListener,
@@ -43,13 +51,13 @@ class AddAddressActivity : AppCompatActivity(),
     private lateinit var mMap: GoogleMap
     private lateinit var geocoder: Geocoder
     private val iActivityListener: IActivityListener = UpdateAddressFragment()
-    private var editAvailableAddress : Address? = null
+    private var editAvailableAddress: Address? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_address)
 
-        editAvailableAddress = intent.getParcelableExtra<Address>(EDIT_AVAILABLE_ADDRESS)
+        //editAvailableAddress = intent.getParcelableExtra<Address>(EDIT_AVAILABLE_ADDRESS)
 
         //init toolbar
         val toolbar: Toolbar = findViewById(R.id.toolbar)
@@ -74,9 +82,96 @@ class AddAddressActivity : AppCompatActivity(),
         //map will open asynchronus way
         mapFragment.getMapAsync(this)
 
+
     }
 
-    @SuppressLint("MissingPermission")
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        onRequestPermissionsResult(requestCode, grantResults)
+    }
+
+    @NeedsPermission(Manifest.permission.ACCESS_FINE_LOCATION)
+    fun showLocation() {
+
+        if (editAvailableAddress != null) {
+            val nagpur = editAvailableAddress?.latitude?.let {
+                editAvailableAddress?.longitude?.let { it1 ->
+                    LatLng(
+                        it,
+                        it1
+                    )
+                }
+            }
+            updateMapWithLatLong(nagpur, mMap)
+        } else {
+
+            val locationRequest = LocationRequest.create()?.apply {
+                interval = 10000
+                fastestInterval = 5000
+                priority = LocationRequest.PRIORITY_HIGH_ACCURACY
+            }
+            val builder = LocationSettingsRequest.Builder()
+                .addLocationRequest(locationRequest)
+            builder.setAlwaysShow(true)
+
+            val client: SettingsClient = LocationServices.getSettingsClient(this)
+            val task: Task<LocationSettingsResponse> = client.checkLocationSettings(builder.build())
+
+            task.addOnSuccessListener { locationSettingsResponse ->
+                println(locationSettingsResponse)
+                var mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
+                mFusedLocationClient.lastLocation.addOnSuccessListener { location ->
+                    if (location != null) {
+                        //set lat long for showing in ui
+                        //init all component for user
+                        val nagpur = LatLng(location?.latitude, location?.longitude)
+                        updateMapWithLatLong(nagpur, mMap)
+                    }
+                }
+
+
+            }
+
+            task.addOnFailureListener { exception ->
+                if (exception is ResolvableApiException){
+                    // Location settings are not satisfied, but this can be fixed
+                    // by showing the user a dialog.
+                    try {
+                        // Show the dialog by calling startResolutionForResult(),
+                        // and check the result in onActivityResult().
+                        exception.startResolutionForResult(this,
+                            1)
+                    } catch (sendEx: IntentSender.SendIntentException) {
+                        // Ignore the error.
+                    }
+                }
+            }
+
+
+
+        }
+
+    }
+
+    @OnShowRationale(Manifest.permission.ACCESS_FINE_LOCATION)
+    fun showRationaleForLocation(request: PermissionRequest) {
+        println()
+    }
+
+    @OnPermissionDenied(Manifest.permission.ACCESS_FINE_LOCATION)
+    fun onLocationDenied() {
+        println()
+    }
+
+    @OnNeverAskAgain(Manifest.permission.ACCESS_FINE_LOCATION)
+    fun onLocationNeverAskAgain() {
+        println()
+    }
+
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
 
@@ -91,29 +186,7 @@ class AddAddressActivity : AppCompatActivity(),
 
         }
 
-
-        if(editAvailableAddress!=null){
-            val nagpur = editAvailableAddress?.latitude?.let { editAvailableAddress?.longitude?.let { it1 ->
-                LatLng(it,
-                    it1
-                )
-            } }
-            updateMapWithLatLong(nagpur,mMap)
-        }else{
-            //fetching current location of device
-            var mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
-            mFusedLocationClient.lastLocation.addOnCompleteListener { task ->
-                val location: Location? = task.getResult()
-                if(location!=null){
-                    //set lat long for showing in ui
-                    //init all component for user
-                    val nagpur = LatLng(location?.latitude, location?.longitude)
-                    updateMapWithLatLong(nagpur,mMap)
-                }
-            }
-        }
-
-
+        showLocationWithPermissionCheck()
 
     }
 
@@ -163,7 +236,8 @@ class AddAddressActivity : AppCompatActivity(),
             geocoder.getFromLocation(
                 latLng.latitude,
                 latLng.longitude,
-                1) as? ArrayList<Address>
+                1
+            ) as? ArrayList<Address>
         var size = list?.size
         if (size != null && size > 0) {
             var address: Address? = list?.get(0)
@@ -186,8 +260,8 @@ class AddAddressActivity : AppCompatActivity(),
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item.itemId){
-            android.R.id.home->{
+        when (item.itemId) {
+            android.R.id.home -> {
                 finish()
             }
         }
@@ -195,9 +269,9 @@ class AddAddressActivity : AppCompatActivity(),
     }
 
     override fun <T> notify(t: T) {
-        when(t){
-            is Address->{
-                 val nagpur = LatLng(t.latitude, t.longitude)
+        when (t) {
+            is Address -> {
+                val nagpur = LatLng(t.latitude, t.longitude)
                 val cameraPosition: CameraPosition = CameraPosition.builder()
                     .target(nagpur)
                     .zoom(15f)

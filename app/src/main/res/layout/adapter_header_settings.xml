@@ -16,7 +16,7 @@
             app:layout_constraintTop_toTopOf="parent"
             android:textColor="#01875F"
             android:textSize="14sp"
-            android:fontFamily="@font/roboto_medium"
+            android:fontFamily="@font/jet_brains_mono_regular"
             android:textAppearance="?attr/textAppearanceBody1"
             />
 

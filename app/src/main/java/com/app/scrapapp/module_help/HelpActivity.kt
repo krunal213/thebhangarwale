@@ -18,7 +18,7 @@ class HelpActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(R.layout.activity_account)
 
         setSupportActionBar(toolbar)
-        supportActionBar?.title = resources.getString(R.string.title_account)
+        supportActionBar?.title = resources.getString(R.string.title_help)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setHomeButtonEnabled(true)
 

@@ -4,6 +4,7 @@ import android.content.Intent
 import android.location.Address
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.view.*
 import androidx.appcompat.widget.PopupMenu
 import androidx.appcompat.widget.Toolbar
@@ -12,12 +13,20 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.app.scrapapp.R
 import com.app.scrapapp.custom.constants.EDIT_AVAILABLE_ADDRESS
 import com.app.scrapapp.module_address.view.adapter.MyAddressAdapter
+import com.app.scrapapp.module_address.view.decoration.MyAddressItemDecoration
+import com.app.scrapapp.module_home.view.SmoothRefreshLayoutHeader
 import com.app.scrapapp.module_home.view.home.HomeItemDecoration
 import kotlinx.android.synthetic.main.activity_my_address.*
+import kotlinx.android.synthetic.main.activity_my_address.mRefreshLayout
+import kotlinx.android.synthetic.main.fragment_home.*
+import me.dkzwm.widget.srl.RefreshingListenerAdapter
+import me.dkzwm.widget.srl.indicator.IIndicator
 import java.util.*
 import kotlin.collections.ArrayList
 
 class MyAddressActivity : AppCompatActivity(), View.OnLongClickListener, View.OnClickListener {
+
+    private val mHandler = Handler()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,7 +54,32 @@ class MyAddressActivity : AppCompatActivity(), View.OnLongClickListener, View.On
         val myAddressAdapter = MyAddressAdapter(myaddress,this,this)
         recyclerviewAddress.layoutManager = LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false)
         recyclerviewAddress.adapter = myAddressAdapter
-        recyclerviewAddress.addItemDecoration(HomeItemDecoration(this))
+        recyclerviewAddress.addItemDecoration(MyAddressItemDecoration(this))
+
+        val header = SmoothRefreshLayoutHeader<IIndicator>(this)
+        mRefreshLayout.setHeaderView(header)
+
+        mRefreshLayout.setOnRefreshListener(
+            object : RefreshingListenerAdapter() {
+                override fun onRefreshing() {
+                    mHandler.postDelayed(
+                        Runnable {
+                            mRefreshLayout.refreshComplete()
+                        },
+                        2000
+                    )
+                }
+
+                override fun onLoadingMore() {
+                    mHandler.postDelayed(
+                        Runnable {
+                            mRefreshLayout.refreshComplete()
+                        },
+                        2000
+                    )
+                }
+            })
+        mRefreshLayout.autoRefresh(false)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

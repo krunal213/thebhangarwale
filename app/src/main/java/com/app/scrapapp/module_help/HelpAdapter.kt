@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.app.scrapapp.R
-import kotlinx.android.synthetic.main.adapter_notification.view.*
+import kotlinx.android.synthetic.main.adapter_help.view.*
 
 data class Menu(val id : Int,val title : String,val subTitle : String)
 

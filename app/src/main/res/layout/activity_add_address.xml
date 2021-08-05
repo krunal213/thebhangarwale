@@ -61,6 +61,8 @@
             app:layout_constraintLeft_toLeftOf="@id/map"
             app:layout_constraintRight_toRightOf="@id/map"
             android:layout_marginTop="36dp"
+            android:visibility="gone"
+
             />
 
 
@@ -73,7 +75,8 @@
             app:layout_constraintLeft_toLeftOf="@id/map"
             app:layout_constraintRight_toRightOf="@id/map"
             android:src="@drawable/ic_pin"
-            android:id="@+id/imageViewPin"/>
+            android:id="@+id/imageViewPin"
+            android:visibility="gone"/>
 
 
 

@@ -1,6 +1,6 @@
 package com.app.scrapapp.custom.constants
 
-object Login{ var IsLogin : Boolean = false }
+object Login{ var IsLogin : Boolean = true }
 object RequestCode{
     const val REQUEST_IMAGE_GET : Int = 1
     const val REQUEST_MY_LOCATION : Int = 2

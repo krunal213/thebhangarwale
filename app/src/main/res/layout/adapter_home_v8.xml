@@ -33,7 +33,7 @@
             app:layout_constraintRight_toLeftOf="@id/textview_date"
             app:layout_constraintVertical_chainStyle="packed" />
 
-    <!--android:fontFamily="@font/roboto_medium"-->
+    <!--android:fontFamily="@font/jet_brains_mono_regular"-->
 
 
 
@@ -51,7 +51,7 @@
             app:layout_constraintLeft_toLeftOf="@id/textview_title"
             android:layout_marginTop="1dp" />
 
-    <!--android:fontFamily="@font/roboto_regular"-->
+    <!--android:fontFamily="@font/jet_brains_mono_regular"-->
 
 
     <TextView
@@ -68,6 +68,6 @@
             android:textColor="@color/material_on_background_emphasis_medium" />
 
 
-    <!--android:fontFamily="@font/roboto_regular"-->
+    <!--android:fontFamily="@font/jet_brains_mono_regular"-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

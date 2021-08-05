@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.appcompat.widget.AppCompatImageView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -15,6 +16,7 @@ import com.app.myapplication.ui.notifications.NotificationsViewModel
 import com.app.scrapapp.R
 import com.app.scrapapp.module_account.AccountActivity
 import com.app.scrapapp.module_help.HelpActivity
+import com.app.scrapapp.module_profile.view.activity.ProfileActivity
 import com.app.scrapapp.module_settings.SettingsActivity
 import com.bumptech.glide.Glide
 
@@ -49,6 +51,8 @@ class ProfileFragment : Fragment(), View.OnClickListener {
         rv?.adapter = ProfileAdapter(this.requireActivity(),this)
         rv?.addItemDecoration(ProfileItemDecoration(this.requireContext()))
 
+        root?.findViewById<ConstraintLayout>(R.id.item_profile)?.setOnClickListener(this)
+
     }
 
     override fun onClick(p0: View?) {
@@ -72,6 +76,9 @@ class ProfileFragment : Fragment(), View.OnClickListener {
 
                 }
 
+            }
+            R.id.item_profile->{
+                startActivity(Intent(requireActivity(), ProfileActivity::class.java))
             }
         }
     }

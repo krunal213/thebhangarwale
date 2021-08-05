@@ -34,10 +34,10 @@
                 android:text="thebhangarwale"
                 android:textColor="#212121"
                 android:textSize="14sp"
-                android:fontFamily="@font/roboto_medium"
+                android:fontFamily="@font/jet_brains_mono_regular"
                 />
 
-        <!--android:fontFamily="@font/roboto_medium"-->
+        <!--android:fontFamily="@font/jet_brains_mono_regular"-->
 
         <TextView
                 android:id="@+id/textview_subtitle"
@@ -45,11 +45,11 @@
                 android:layout_height="wrap_content"
                 android:text="1 May 2021"
                 android:textSize="10sp"
-                android:fontFamily="@font/roboto_regular"
+                android:fontFamily="@font/jet_brains_mono_regular"
                 />
 
 
-        <!--android:fontFamily="@font/roboto_regular"-->
+        <!--android:fontFamily="@font/jet_brains_mono_regular"-->
 
 
     </LinearLayout>

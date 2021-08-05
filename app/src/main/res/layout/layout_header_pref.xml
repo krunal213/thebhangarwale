@@ -6,7 +6,7 @@
          android:layout_marginTop="28dp"
         android:textColor="#01875F"
         android:textSize="14sp"
-        android:fontFamily="@font/roboto_medium"
+        android:fontFamily="@font/jet_brains_mono_regular"
         android:textAppearance="?attr/textAppearanceBody1"
         android:paddingLeft="16dp"
         android:paddingTop="6dp"

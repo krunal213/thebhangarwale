@@ -17,7 +17,10 @@
             android:screenOrientation="portrait"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-
+        <activity
+                android:name=".ScrollingActivity"
+                android:label="@string/title_activity_scrolling"
+                android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".test.WebViewActivity" />
         <activity
                 android:name=".test.MainBhangarwaleActivity"
@@ -37,7 +40,8 @@
         <activity
                 android:name=".test_new.MainActivity"
                 android:label="@string/title_activity_main_bhangarwale"
-                android:theme="@style/BhangarAppTheme" />
+                android:theme="@style/BhangarAppTheme"
+                android:windowSoftInputMode="adjustNothing" />
         <!--
 <activity
                 android:name=".test.FullscreenActivity"
@@ -52,6 +56,12 @@
         </activity>
         -->
         <activity
+                android:name=".module_checkout.ConfirmationActivity"
+                android:theme="@style/AppTheme.Address" />
+        <activity
+                android:name=".module_checkout.ChooseAddressActivity"
+                android:theme="@style/AppTheme.Address" />
+        <activity
                 android:name=".module_address.view.activity.UpdateAddressActivity"
                 android:theme="@style/AppTheme.Address" />
         <activity
@@ -64,11 +74,10 @@
         <activity
                 android:name=".module_settings.SettingsActivity"
                 android:theme="@style/AppTheme.Address"
-                android:windowSoftInputMode="adjustNothing">
-        </activity>
+                android:windowSoftInputMode="adjustNothing"></activity>
         <activity
                 android:name=".module_profile.view.activity.ProfileActivity"
-                android:theme="@style/HomeTheme"
+                android:theme="@style/AppTheme.Profile"
                 android:windowSoftInputMode="adjustResize|stateVisible">
 
             <!--
@@ -131,10 +140,14 @@
         <activity
                 android:name=".module_splash.SplashActivity"
                 android:theme="@style/SplashTheme">
+
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+
 
         </activity>
         <!--
@@ -154,15 +167,16 @@
         <activity
                 android:name=".module_home.view.activity.MainActivity"
                 android:launchMode="singleTask"
-                android:theme="@style/HomeTheme" />
+                android:theme="@style/HomeTheme"
+                android:windowSoftInputMode="adjustNothing" />
         <activity
                 android:name=".ImageDetailScreenActivity"
                 android:configChanges="orientation|keyboardHidden|screenSize"
                 android:theme="@style/FullscreenTheme" />
         <activity
-                android:name=".module_order.AddItemActivity"
+                android:name=".module_order.AddItemActivityV2"
                 android:launchMode="singleTop"
-                android:theme="@style/AppThemeV2"
+                android:theme="@style/AppTheme.AddItem"
                 android:windowSoftInputMode="adjustNothing">
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />
@@ -179,11 +193,6 @@
                 <data android:mimeType="image/*" />
             </intent-filter>
         </activity>
-        <activity
-                android:name=".module_order.AddItemActivityV2"
-                android:launchMode="singleTop"
-                android:theme="@style/AppTheme.AddItem"
-                android:windowSoftInputMode="adjustNothing" />
         <activity
                 android:name=".module_order.UpdateItemActivity"
                 android:theme="@style/AppTheme.AddItem"
@@ -209,6 +218,19 @@
                 android:launchMode="singleTop"
                 android:theme="@style/AppTheme.AddItem"
                 android:windowSoftInputMode="adjustNothing" />
+        <activity
+                android:name=".module_request.RequestActivity"
+                android:launchMode="singleTop"
+                android:theme="@style/AppTheme.AddItem"
+                android:windowSoftInputMode="adjustNothing" />
+
+        <activity
+                android:name=".test_map.MainActivity"
+                android:theme="@style/AppTheme.Address"
+                android:windowSoftInputMode="adjustNothing">
+
+
+        </activity>
     </application>
 
 </manifest>

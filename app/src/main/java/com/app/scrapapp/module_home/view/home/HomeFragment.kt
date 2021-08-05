@@ -4,6 +4,7 @@ import android.app.ActivityOptions
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.os.Handler
 import android.view.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
@@ -14,18 +15,26 @@ import com.app.myapplication.ui.home.HomeViewModel
 import com.app.scrapapp.R
 import com.app.scrapapp.module_address.view.activity.CreateCustomAddressActivity
 import com.app.scrapapp.module_address.view.activity.MyAddressActivity
+import com.app.scrapapp.module_checkout.ChooseAddressActivity
+import com.app.scrapapp.module_home.view.SmoothRefreshLayoutHeader
 import com.app.scrapapp.module_order.AddItemActivity
 import com.app.scrapapp.module_order.AddItemActivityV2
 import com.app.scrapapp.module_order.UpdateItemActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import kotlinx.android.synthetic.main.fragment_dashboard.*
 import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.android.synthetic.main.fragment_home.mRefreshLayout
+import kotlinx.android.synthetic.main.fragment_home.recyclerView
+import kotlinx.android.synthetic.main.fragment_home.toolbar
+import me.dkzwm.widget.srl.RefreshingListenerAdapter
+import me.dkzwm.widget.srl.indicator.IIndicator
 
 
 class HomeFragment : Fragment(), View.OnLongClickListener, Toolbar.OnMenuItemClickListener,
     View.OnClickListener {
 
     private lateinit var homeViewModel: HomeViewModel
-
+    private val mHandler = Handler()
 
 
     override fun onCreateView(
@@ -89,6 +98,33 @@ class HomeFragment : Fragment(), View.OnLongClickListener, Toolbar.OnMenuItemCli
         recyclerView.adapter = HomeAdapter(this.requireActivity() as AppCompatActivity, this, this)
         recyclerView.addItemDecoration(HomeItemDecoration(requireContext()))
 
+        val header = SmoothRefreshLayoutHeader<IIndicator>(this.requireActivity())
+        mRefreshLayout.setHeaderView(header)
+
+        mRefreshLayout.setOnRefreshListener(
+            object : RefreshingListenerAdapter() {
+                override fun onRefreshing() {
+                    mHandler.postDelayed(
+                        Runnable {
+                            mRefreshLayout.refreshComplete()
+                        },
+                        2000
+                    )
+                }
+
+                override fun onLoadingMore() {
+                    mHandler.postDelayed(
+                        Runnable {
+                            mRefreshLayout.refreshComplete()
+                        },
+                        2000
+                    )
+                }
+            })
+        mRefreshLayout.autoRefresh(false)
+        layoutProceed.setOnClickListener(this)
+
+
     }
 
 
@@ -141,6 +177,16 @@ class HomeFragment : Fragment(), View.OnLongClickListener, Toolbar.OnMenuItemCli
             R.id.floatingActionButton ->{
                 val intent: Intent =
                     Intent(this.requireActivity(), AddItemActivityV2::class.java)
+                /*val options = ActivityOptions.makeSceneTransitionAnimation(
+                    requireActivity(),
+                    p0,
+                    "shared_element_container" // The transition name to be matched in Activity B.
+                )*/
+                startActivity(intent)
+            }
+            R.id.layoutProceed->{
+                val intent: Intent =
+                    Intent(this.requireActivity(), ChooseAddressActivity::class.java)
                 /*val options = ActivityOptions.makeSceneTransitionAnimation(
                     requireActivity(),
                     p0,

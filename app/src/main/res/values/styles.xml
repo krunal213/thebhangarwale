@@ -3,7 +3,7 @@
 
     <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowBackground">@android:color/white</item>
-        <!--<item name="fontFamily">@font/roboto_regular</item>-->
+        <!--<item name="fontFamily">@font/jet_brains_mono_regular</item>-->
         <!--<item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimary</item>
         <item name="colorAccent">@color/colorPrimary</item>
@@ -32,6 +32,8 @@
         <item name="otpViewStyle">@style/OtpWidget.OtpView</item>
         <item name="android:windowBackground">@android:color/white</item>
         <item name="android:colorBackground">@android:color/white</item>
+
+        <item name="fontFamily">@font/jet_brains_mono_regular</item>
     </style>
 
     <style name="AppThemeV4" parent="Theme.MaterialComponents.Light.NoActionBar">
@@ -39,6 +41,7 @@
         <item name="colorPrimaryDark">@android:color/darker_gray</item>
         <item name="colorPrimary">@color/colorAccent</item>
         <item name="otpViewStyle">@style/OtpWidget.OtpView</item>
+        <item name="fontFamily">@font/jet_brains_mono_regular</item>
     </style>
 
     <style name="AppTheme.AddItem" parent="Theme.MaterialComponents.Light.NoActionBar">
@@ -46,10 +49,11 @@
         <item name="colorPrimaryDark">@android:color/darker_gray</item>
         <item name="colorPrimary">@color/colorAccent</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <!--<item name="fontFamily">@font/roboto_regular</item>-->
+        <!--<item name="fontFamily">@font/jet_brains_mono_regular</item>-->
         <item name="android:windowBackground">@android:color/white</item>
         <item name="android:colorBackground">@android:color/white</item>
         <item name="appBarLayoutStyle">@style/AppBarTheme</item>
+        <item name="fontFamily">@font/jet_brains_mono_regular</item>
     </style>
 
     <style name="AppTheme.Address" parent="Theme.MaterialComponents.Light.NoActionBar">
@@ -60,17 +64,19 @@
         <item name="android:windowBackground">@android:color/white</item>
         <item name="android:colorBackground">@android:color/white</item>
         <item name="appBarLayoutStyle">@style/AppBarTheme</item>
-
+        <item name="fontFamily">@font/jet_brains_mono_regular</item>
     </style>
 
     <style name="AppBarTheme" parent="Widget.MaterialComponents.AppBarLayout.Primary">
         <item name="android:background">@android:color/white</item>
+        <item name="fontFamily">@font/jet_brains_mono_regular</item>
     </style>
 
     <style name="SplashThemeV2" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@android:color/white</item>
         <item name="colorPrimaryDark">@android:color/white</item>
         <item name="colorAccent">@android:color/white</item>
+        <item name="fontFamily">@font/jet_brains_mono_regular</item>
     </style>
 
     <style name="AppThemeV2" parent="Theme.AppCompat.Light.NoActionBar">
@@ -80,6 +86,7 @@
         <item name="android:windowBackground">@android:color/white</item>
         <item name="android:colorBackground">@android:color/white</item>
         <item name="otpViewStyle">@style/OtpWidget.OtpView</item>
+        <item name="fontFamily">@font/jet_brains_mono_regular</item>
     </style>
 
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
@@ -88,7 +95,7 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
-        <!--<item name="fontFamily">@font/roboto_regular</item>-->
+        <item name="fontFamily">@font/jet_brains_mono_regular</item>
         <item name="android:windowBackground">@android:color/white</item>
         <item name="android:colorBackground">@android:color/white</item>
         <item name="otpViewStyle">@style/OtpWidget.OtpView</item>
@@ -97,6 +104,7 @@
     <style name="DialogFragmentTheme" parent="@android:style/Theme.Dialog">
         <item name="android:windowBackground">@color/colorProgressBarBackground</item>
         <item name="android:windowIsFloating">false</item>
+        <item name="fontFamily">@font/jet_brains_mono_regular</item>
     </style>
 
     <style name="DialogFragmentThemeV2" parent="Theme.AppCompat.Light.DarkActionBar">
@@ -109,6 +117,7 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowBackground">@color/colorProgressBarBackground</item>
+        <item name="fontFamily">@font/jet_brains_mono_regular</item>
     </style>
 
     <style name="HomeTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
@@ -121,7 +130,8 @@
        <item name="android:colorBackground">@color/reply_blue_50</item>-->
         <item name="android:colorBackground">@color/color_status_bar</item>
         <item name="colorSecondary">#F8B624</item>
-        <!--<item name="fontFamily">@font/roboto_regular</item>-->
+        <!--<item name="fontFamily">@font/jet_brains_mono_regular</item>-->
+        <item name="fontFamily">@font/jet_brains_mono_regular</item>
     </style>
 
     <style name="MyAddressTheme" parent="Theme.AppCompat.Light.NoActionBar">
@@ -134,18 +144,22 @@
         <item name="actionModeStyle">@style/MyAddressActionMode</item>
         <item name="actionModeCloseButtonStyle">@style/MyAddressActionButtonCloseMode</item>
         <item name="actionOverflowButtonStyle">@style/MyAddressActionOverflowButtonStyle</item>
+        <item name="fontFamily">@font/jet_brains_mono_regular</item>
     </style>
 
     <style name="MyAddressActionOverflowButtonStyle" parent="Widget.AppCompat.ActionButton.Overflow">
         <item name="android:tint">@color/colorAccent</item>
+        <item name="fontFamily">@font/jet_brains_mono_regular</item>
     </style>
 
     <style name="MyAddressActionMode" parent="Widget.AppCompat.ActionMode">
         <item name="background">@color/colorPrimaryHome</item>
+        <item name="fontFamily">@font/jet_brains_mono_regular</item>
     </style>
 
     <style name="MyAddressActionButtonCloseMode" parent="Widget.AppCompat.Light.ActionButton.CloseMode">
         <item name="android:tint">@color/colorAccent</item>
+        <item name="fontFamily">@font/jet_brains_mono_regular</item>
     </style>
 
     <style name="FullscreenTheme" parent="AppTheme">
@@ -154,31 +168,36 @@
         <item name="android:windowBackground">@null</item>
         <item name="metaButtonBarStyle">?android:attr/buttonBarStyle</item>
         <item name="metaButtonBarButtonStyle">?android:attr/buttonBarButtonStyle</item>
+        <item name="fontFamily">@font/jet_brains_mono_regular</item>
     </style>
 
     <style name="FullscreenActionBarStyle" parent="Widget.AppCompat.ActionBar">
         <item name="android:background">@color/black_overlay</item>
+        <item name="fontFamily">@font/jet_brains_mono_regular</item>
     </style>
 
     <style name="FullscreenActionBar" parent="ThemeOverlay.AppCompat.ActionBar">
         <!-- Parent theme sets colorControlNormal to textColorPrimary. -->
         <item name="android:textColorPrimary">@color/colorPrimaryDark</item>
         <item name="colorControlNormal">@color/colorPrimaryDark</item>
+        <item name="fontFamily">@font/jet_brains_mono_regular</item>
     </style>
 
     <style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
         <item name="android:textSize">16sp</item>
+        <item name="fontFamily">@font/jet_brains_mono_regular</item>
     </style>
 
     <style name="Toolbar.TitleTextV3" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
         <item name="android:textSize">16sp</item>
-        <item name="fontFamily">@font/roboto_regular</item>
+        <item name="fontFamily">@font/jet_brains_mono_regular</item>
     </style>
 
 
 
     <style name="HomeToolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
         <item name="android:textColor">@color/colorAccent</item>
+        <item name="fontFamily">@font/jet_brains_mono_regular</item>
     </style>
 
     <style name="DeleteTheme" parent="Theme.AppCompat.Light.DarkActionBar">
@@ -187,6 +206,7 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+        <item name="fontFamily">@font/jet_brains_mono_regular</item>
         <!--<item name="fontFamily">@font/google_sans_medium</item>-->
     </style>
 
@@ -197,11 +217,14 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <!--<item name="fontFamily">@font/google_sans_medium</item>-->
+
+        <item name="fontFamily">@font/jet_brains_mono_regular</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+        <item name="fontFamily">@font/jet_brains_mono_regular</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
@@ -211,6 +234,7 @@
     <style name="BottomSheetDialogFragmentTheme" parent="Theme.Design.Light.BottomSheetDialog">
         <item name="android:windowIsFloating">false</item>
         <item name="android:windowSoftInputMode">adjustResize</item>
+        <item name="fontFamily">@font/jet_brains_mono_regular</item>
     </style>
 
     <style name="BhangarAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
@@ -220,17 +244,46 @@
         <!--<item name="fontFamily">@font/google_sans_medium</item>-->
         <item name="android:windowBackground">@android:color/white</item>
         <item name="android:colorBackground">@android:color/white</item>
+        <item name="fontFamily">@font/jet_brains_mono_regular</item>
     </style>
 
     <style name="BottomNavigationView.InActive" parent="@style/TextAppearance.AppCompat.Caption"></style>
 
     <style name="BottomNavigationView.Active" parent="@style/TextAppearance.AppCompat.Caption">
         <item name="android:textColor">@android:color/black</item>
+        <item name="fontFamily">@font/jet_brains_mono_regular</item>
     </style>
 
     <style name="Toolbar.TitleTextV2" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
         <item name="android:textSize">24sp</item>
         <item name="fontFamily">@font/odibee_sans_regular</item>
+    </style>
+
+   <!-- <style name="HomeTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        &lt;!&ndash; Customize your theme here. &ndash;&gt;
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkHome</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">#01875F</item>
+        <item name="colorControlNormal">#01875F</item>
+        <item name="colorOnSurface">#000000</item>&lt;!&ndash;
+       <item name="android:colorBackground">@color/reply_blue_50</item>&ndash;&gt;
+        <item name="android:colorBackground">@color/color_status_bar</item>
+        <item name="colorSecondary">#F8B624</item>
+        &lt;!&ndash;<item name="fontFamily">@font/jet_brains_mono_regular</item>&ndash;&gt;
+        <item name="fontFamily">@font/jet_brains_mono_regular</item>
+    </style>-->
+
+    <style name="AppTheme.Profile" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimaryDark">@android:color/darker_gray</item>
+        <item name="colorPrimary">@color/colorAccent</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <!--<item name="fontFamily">@font/jet_brains_mono_regular</item>-->
+        <item name="android:windowBackground">@android:color/white</item>
+        <item name="android:colorBackground">@android:color/white</item>
+        <item name="appBarLayoutStyle">@style/AppBarTheme</item>
+        <item name="fontFamily">@font/jet_brains_mono_regular</item>
+        <item name="colorSecondary">#F8B624</item>
     </style>
 
 </resources>

@@ -9,8 +9,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.app.scrapapp.R
 import com.app.scrapapp.custom.constants.Login
+import com.app.scrapapp.module_home.view.activity.MainActivity
 import com.app.scrapapp.module_login.PhoneNumberActivityV3
 import com.app.scrapapp.module_order.AddItemActivity
+import com.app.scrapapp.module_order.AddItemActivityV2
 import com.app.scrapapp.test.MainBhangarwaleActivity
 import java.util.*
 
@@ -25,7 +27,7 @@ class SplashActivity : AppCompatActivity() {
                     when(Login.IsLogin){
                         true->{
                             createShortCutForAddItemIfUserHasLoggedIn()
-                            val intentHome : Intent = Intent(this, MainBhangarwaleActivity::class.java)
+                            val intentHome : Intent = Intent(this, MainActivity::class.java)
                             startActivity(intentHome)
                             finish()
                         }
@@ -42,7 +44,7 @@ class SplashActivity : AppCompatActivity() {
     }
     private fun createShortCutForAddItemIfUserHasLoggedIn() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N_MR1){
-            val intent = Intent(this, AddItemActivity::class.java)
+            val intent = Intent(this, AddItemActivityV2::class.java)
             intent.setAction("LOCATION_SHORTCUT")
             val shortcutManager: ShortcutManager? = getSystemService(ShortcutManager::class.java)
             shortcutManager?.dynamicShortcuts?.clear()

@@ -62,10 +62,10 @@
                         android:textSize="16sp"
                         android:textAppearance="?attr/textAppearanceBody1"
                         android:textColor="#212121"
-                        android:fontFamily="@font/roboto_regular"
+                        android:fontFamily="@font/jet_brains_mono_regular"
                         />
 
-                <!--android:fontFamily="@font/roboto_regular"-->
+                <!--android:fontFamily="@font/jet_brains_mono_regular"-->
 
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -87,10 +87,10 @@
                         android:textColor="#212121"
                         android:textSize="16sp"
                         android:textAppearance="?attr/textAppearanceBody1"
-                        android:fontFamily="@font/roboto_regular"
+                        android:fontFamily="@font/jet_brains_mono_regular"
                         />
 
-                <!--android:fontFamily="@font/roboto_regular"-->
+                <!--android:fontFamily="@font/jet_brains_mono_regular"-->
 
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -107,7 +107,7 @@
                     android:textColor="#757575"
                     />
 
-            <!--android:fontFamily="@font/roboto_regular"-->
+            <!--android:fontFamily="@font/jet_brains_mono_regular"-->
 
 
             <androidx.recyclerview.widget.RecyclerView
@@ -127,6 +127,7 @@
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:text="Submit"
+            android:textAllCaps="false"
             android:textColor="@color/colorPrimaryHome"
             android:background="@drawable/drawable_oval_shape"
             app:layout_constraintBottom_toBottomOf="parent"

@@ -5,14 +5,11 @@
         android:id="@+id/mobile_navigation"
         app:startDestination="@+id/navigation_home">
 
-
-
     <fragment
             android:id="@+id/navigation_dashboard"
             android:name="com.app.scrapapp.module_home.view.home.HomeFragment"
             android:label="Dashboard"
             tools:layout="@layout/fragment_home"/>
-
 
     <fragment
             android:id="@+id/navigation_home"
@@ -20,11 +17,17 @@
             android:label="Home"
             tools:layout="@layout/fragment_dashboard" />
 
-
-
     <fragment
             android:id="@+id/navigation_notifications"
             android:name="com.app.scrapapp.module_home.view.notifications.ProfileFragment"
             android:label="Notification"
             tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+            android:id="@+id/navigation_notification"
+            android:name="com.app.scrapapp.module_home.view.notifications.NotificationFragment"
+            android:label="Notification"
+            tools:layout="@layout/fragment_notification" />
+
+
 </navigation>

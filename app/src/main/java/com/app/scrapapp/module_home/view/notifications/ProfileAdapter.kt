@@ -5,13 +5,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.app.myapplication.ui.notifications.NotificationViewHolder
+import com.app.myapplication.ui.notifications.ProfileViewHolder
 import com.app.scrapapp.R
 import kotlinx.android.synthetic.main.adapter_notification.view.*
 
 data class Menu(val id : Int,val icon : Int,val title : String,val subTitle : String)
 
-class ProfileAdapter(val context: Context,val clickListener: View.OnClickListener) : RecyclerView.Adapter<NotificationViewHolder>() {
+class ProfileAdapter(val context: Context,val clickListener: View.OnClickListener) : RecyclerView.Adapter<ProfileViewHolder>() {
 
     val menus : ArrayList<Menu> = ArrayList()
 
@@ -32,16 +32,16 @@ class ProfileAdapter(val context: Context,val clickListener: View.OnClickListene
         menus.add(Menu(R.id.help,icon,title, subTitle))
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NotificationViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProfileViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.adapter_notification,parent,false)
-        return NotificationViewHolder(view)
+        return ProfileViewHolder(view)
     }
 
     override fun getItemCount(): Int {
         return menus.size
     }
 
-    override fun onBindViewHolder(holder: NotificationViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ProfileViewHolder, position: Int) {
         var menu : Menu = menus.get(position)
         holder.itemView.imageViewIcon.setImageResource(menu.icon)
         holder.itemView.textViewTitle.text = menu.title
